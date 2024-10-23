@@ -4,6 +4,8 @@ type Props = {
   isCollapsed: boolean;
   icon: React.ReactNode;
   handleActive: () => void;
+  handleClickEvent: () => void;
+  isModal: boolean;
 };
 
 export default function ListItem({
@@ -12,10 +14,15 @@ export default function ListItem({
   isCollapsed,
   icon,
   handleActive,
+  handleClickEvent,
+  isModal,
 }: Props) {
   return (
     <li
-      onClick={handleActive}
+      onClick={() => {
+        handleActive();
+        isModal && handleClickEvent();
+      }}
       className={`relative p-1 cursor-pointer flex items-center gap-5 hover:bg-stone-50 hover:text-blue-500 transition-all duration-100 ${
         isActive ? "bg-stone-50 text-blue-500" : "text-stone-600 "
       }`}

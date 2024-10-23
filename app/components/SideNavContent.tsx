@@ -19,9 +19,15 @@ import DarkModeToggle from "./DarkModeToggle";
 type Props = {
   isCollapsed: boolean;
   setIsCollapsed: () => void;
+
+  setClickEvents: () => void;
 };
 
-export default function SideNavContent({ isCollapsed, setIsCollapsed }: Props) {
+export default function SideNavContent({
+  isCollapsed,
+  setIsCollapsed,
+  setClickEvents,
+}: Props) {
   const [active, setActive] = useState<number>(0);
 
   const lists = [
@@ -30,7 +36,7 @@ export default function SideNavContent({ isCollapsed, setIsCollapsed }: Props) {
     "Speakers",
     "Reports",
     "Notifications",
-    "Message",
+    "Messages",
     "Settings",
   ];
 
@@ -57,7 +63,9 @@ export default function SideNavContent({ isCollapsed, setIsCollapsed }: Props) {
           isActive={index === active}
           icon={icons[index]}
           handleActive={() => handleCollapsed(index)}
+          handleClickEvent={setClickEvents}
           isCollapsed={isCollapsed}
+          isModal={list === "Events"}
         />
       ))}
 
