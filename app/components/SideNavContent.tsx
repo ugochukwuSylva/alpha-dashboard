@@ -35,13 +35,13 @@ export default function SideNavContent({ isCollapsed, setIsCollapsed }: Props) {
   ];
 
   const icons = [
-    <LuHome />,
-    <MdEventAvailable />,
-    <RiUserVoiceLine />,
-    <HiOutlineDocumentReport />,
-    <IoIosNotificationsOutline />,
-    <IoChatbubblesOutline />,
-    <IoSettingsOutline />,
+    <LuHome key={1} />,
+    <MdEventAvailable key={2} />,
+    <RiUserVoiceLine key={3} />,
+    <HiOutlineDocumentReport key={4} />,
+    <IoIosNotificationsOutline key={5} />,
+    <IoChatbubblesOutline key={6} />,
+    <IoSettingsOutline key={7} />,
   ];
 
   function handleCollapsed(i: number) {
