@@ -4,7 +4,6 @@ import { useState } from "react";
 import MainContainer from "./components/MainContainer";
 import SideNav from "./components/SideNav";
 import EventModal from "./components/EventModal";
-import SideNavContent from "./components/SideNavContent";
 
 export default function AppLayout() {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
