@@ -21,7 +21,7 @@ export default function ListItem({
     <li
       onClick={() => {
         handleActive();
-        isModal && handleClickEvent();
+        if (isModal) return handleClickEvent();
       }}
       className={`relative p-1 cursor-pointer flex items-center gap-5 hover:bg-stone-50 hover:text-blue-500 transition-all duration-100 ${
         isActive ? "bg-stone-50 text-blue-500" : "text-stone-600 "
